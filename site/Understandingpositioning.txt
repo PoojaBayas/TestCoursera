@@ -1,0 +1,69 @@
+Positioning in Css
+
+1. Static : It is the default positioning for all the html element will have when they enter on the page. So it says 
+            "follow the other elements in the document flow" So whatever comes first in our html 
+like is any div if written after h1 so it comes after h1.like that 
+
+2.Relative:It is just like static but it allows you to do 4 specific things that static does not
+ that u can change top, right, bottom and the left of an html element. when i write postion:relative nothing really happens
+one the child (one) but when i specify left:10px then it moves itself by 10 px from left and overflows its parent too.
+(see positioningTest.html in coursera file in c drive)
+             
+                 Relative allows you to change the position of the element relative to where it would be in the document 
+flow if it was statically positioned. if there are elemens one after the other like one two three 
+if i specify 
+one{position: relative;  top: 20px;} then  one will overflow on two because relative position when apply top ,left ,right
+bottom , it actually takes that elemnt out of the documnet flow and moves it down ,up,right or left. and 
+prior whre the one was that place is preserved as it is now there but we moved it below 10 pixel(other elements act like elemnt one 
+is there at his prior place)
+
+In gernaral  you almost never going to using top,left,right and bottom on a position:relative elemnet   bcoz all that does is to move that elemnt 
+out of the document flow & it become really difficult for the other element bcoz it will overflow on them .
+
+3. Absolute : That is used for moving top,left,right , and bottom     
+when i put like 
+one {
+position:absolute;
+}
+then The document just completely ignore the one element on the page and just the underneath elemnts(two & three ) will come up and takes it's 
+position as like it was never before 
+So absolute positioning does not preserves it's space
+if we do like 
+one
+{
+position:absolute;
+top:0px ;
+}
+then it directly toches to top of the screen (it assumes all the screen)
+Absolute position absolutly position an element inside of some parent conatiner that it can refernce
+whever parent have positioned relatively/ absolutly/sticky/fixed it assumes it's screen uptill that 
+by default all html elemnts positioned static(expcept <html>) so if the parent is static it doesn't consider it it goes all the way along until it find positioned
+absolute/relative/sticky/fixed .So as we know <html> does not postioned static so here inour case the child one goes till tag <html>(it means the screen) so consider its container as html)  
+
+Anytime you have a postion other than static, Absolute elements will use that as it's parent
+
+4.Fixed-
+It consider all the screen( completly ignores the parent relative/static or not)
+If you place any element byusing fixed like
+one {
+postion:fixed;
+top:0;
+}
+Something unique about the fixed elemnts they stay in the same place when u scroll down
+the page big difference between absolute and fixed is fixed moves with the pages and remain 
+same exact position on the page and also it positioned itself entire html page and not just its parent
+
+sticky:
+it has the combination on both relative and fixed
+parent {
+position: relative;
+}
+
+one{
+position:sticky;
+top:0;
+}
+
+it will remain just like relative but when we scroll down the page as soon as our page 
+hits the top of our page since we set top:0 then one will stick to page and it becomes fixed to page now 
+it stays top of our page.
